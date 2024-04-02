@@ -26,8 +26,8 @@
                     playerChoice = prompt("Oops try again! Pick rock, paper, or scissors")
                 }
             }
-
-            return prompt("Last chance to choose rock paper or scissors... Defaults to rock") || "rock";
+            playerChoice = prompt("Last chance to choose rock paper or scissors... Defaults to rock")
+            return (key.indexOf(playerChoice) > -1) ? playerChoice : "rock";
 
             
 
