@@ -28,11 +28,8 @@
             }
             playerChoice = prompt("Last chance to choose rock paper or scissors... Defaults to rock")
             return (key.indexOf(playerChoice) > -1) ? playerChoice : "rock";
-
-            
-
-
         }
+
         function getComputerChoice() {
           const key = ["rock", "paper", "scissors"];
           return key[Math.floor(Math.random() * 3)];
@@ -53,6 +50,7 @@
                 return "You Lose! " + capitalizeWord(computerChoice) + " beats " + capitalizeWord(pChoice);
             }
         }
+
         function playGame() {
 
             let wins = 0;
