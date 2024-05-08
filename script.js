@@ -110,7 +110,7 @@ function playGame() {
     announcer.textContent = "Welcome to RPS!"
 
     rock.addEventListener("click", () => {
-    score += playRound("rock", "rock");
+    score += playRound("rock", getComputerChoice());
     updateScoreBoard(score);
     if (isGameOver(score)) {
         endGame(score);
