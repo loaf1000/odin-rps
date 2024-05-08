@@ -3,6 +3,17 @@ const paper = document.querySelector(".Paper");
 const scissors = document.querySelector(".Scissors");
 const scoreBoard = document.querySelector(".Scoreboard");
 
+rock.addEventListener("click", () => {
+    message = playRound("rock", getComputerChoice());
+});
+
+paper.addEventListener("click", () => {
+    message = playRound("paper", getComputerChoice());
+});
+
+scissors.addEventListener("click", () => {
+   message = playRound("scissors", getComputerChoice());
+});
 
 
 
@@ -42,17 +53,6 @@ function playGame() {
     let draws = 0;
     let message;
 
-    rock.addEventListener("click", () => {
-        message = playRound("rock", getComputerChoice());
-    });
-    
-    paper.addEventListener("click", () => {
-        message = playRound("paper", getComputerChoice());
-    });
-    
-    scissors.addEventListener("click", () => {
-       message = playRound("scissors", getComputerChoice());
-    });
 
 
 
