@@ -11,7 +11,7 @@ const drawScore = scoreBoard.querySelector(".Draws")
 
 
 function getWins(score) {
-    return Math.floor(score / 100);
+    return score % 10;
 }
 
 function getLosses(score) {
@@ -19,7 +19,8 @@ function getLosses(score) {
 }
 
 function getDraws(score) {
-    return score % 10;
+    return Math.floor(score / 100);
+
 }
 
 function updateScoreBoard(score) {
@@ -88,11 +89,11 @@ function playRound (playerChoice, computerChoice) {
     
     if (pChoice == computerChoice) {
        announcer.textContent = "Draw! You both picked " + capitalizeWord(computerChoice); 
-       return 1;
+       return 100;
     }
     else if ((pChoice == "rock" && computerChoice == "scissors") || (pChoice == "paper" && computerChoice == "rock") || (pChoice == "scissors" && computerChoice == "paper")) {
         announcer.textContent =  "You Win! " + capitalizeWord(pChoice) + " beats " + capitalizeWord(computerChoice);
-        return 100;
+        return 1;
     }
     else
     {
@@ -103,13 +104,13 @@ function playRound (playerChoice, computerChoice) {
 
 function playGame() {
 
-    //0-- wins, -0- losses, --0 draw
+    //0-- draws, -0- losses, --0 wins
     let score = 0;
 
     announcer.textContent = "Welcome to RPS!"
 
     rock.addEventListener("click", () => {
-    score += playRound("rock", getComputerChoice());
+    score += playRound("rock", "rock");
     updateScoreBoard(score);
     if (isGameOver(score)) {
         endGame(score);
